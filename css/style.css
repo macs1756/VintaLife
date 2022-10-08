@@ -481,6 +481,7 @@ h2 {
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
   position: absolute;
+  z-index: 99999;
   top: 100%;
   right: calc(15px + 15 * ((100vw - 320px) / 1380));
   width: 200px;
