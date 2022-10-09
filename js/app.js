@@ -92,3 +92,28 @@ modalWr.addEventListener("click", function(event){
 
 
 
+
+
+const swiper = new Swiper('.catalog__swiper-swiper', {
+	loop: true,
+	navigation: {
+		nextEl: ".arrow-right",
+		prevEl: ".arrow-left",
+	},
+	slidesPerView: 3,
+	spaceBetween: 60,
+breakpoints:{
+	0:{
+		spaceBetween: 20,
+	},
+	992: {
+		spaceBetween: 40,
+	},
+	1200:{
+		spaceBetween: 60,
+	},
+},
+	
+
+ });
+ 
