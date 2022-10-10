@@ -117,3 +117,38 @@ breakpoints:{
 
  });
  
+
+ let formName = document.querySelector("#form__name");
+ let formTell = document.querySelector("#form__tell");
+ let formBtn = document.querySelector("#form__btn");
+
+ let regName = /^[0-9a-zA-Zа-яА-Яa-zA-ZЄ-ЯҐа-їґ]{3,}$/;
+ let regTell = /^\+?[0-9]{3,}$/;
+
+ formBtn.addEventListener("click", ()=>{
+
+
+	if(regName.test(formName.value)){
+		console.log("++");
+	}else{
+		console.log("--");
+	}
+
+	if(regTell.test(formTell.value)){
+		console.log("++");
+	}else{
+		console.log("--");
+	}
+
+	if(regName.test(formName.value) && regTell.test(formTell.value)){
+		alert("data sent to the server")
+	}
+
+
+
+
+ })
+
+ 
+
+ //console.log(regName.test(formName.value));
