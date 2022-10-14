@@ -127,8 +127,18 @@ breakpoints:{
  let regName = /^[0-9a-zA-Zа-яА-Яa-zA-ZЄ-ЯҐа-їґ]{3,}$/;
  let regTell = /^\+?[0-9]{12,}$/;
 
- formBtn.addEventListener("click", ()=>{
 
+
+function activeModal(){
+	modalWr.classList.add("modal__wr-active");
+	modalContent.classList.add("modal__body-open");
+}
+
+
+
+
+
+ formBtn.addEventListener("click", ()=>{
 
 	if(regName.test(formName.value)){
 		document.querySelector(".valid-name").classList.add("active-validation");
@@ -147,8 +157,7 @@ breakpoints:{
 	}
 
 	if(regName.test(formName.value) && regTell.test(formTell.value)){ 
-		modalWr.classList.add("modal__wr-active");
-		modalContent.classList.add("modal__body-open");
+		activeModal();
 	}
  });
 
@@ -177,7 +186,13 @@ breakpoints:{
 	}
 
 	if(regName.test(formName2.value) && regTell.test(formTell2.value)){ 
-		modalWr.classList.add("modal__wr-active");
-		modalContent.classList.add("modal__body-open");
+		activeModal();
 	}
  });
+
+
+ let freeMeasurement = document.querySelector(".subfooter__text-btn-btn");
+
+ freeMeasurement.addEventListener("click", ()=>{
+	activeModal();
+ })
