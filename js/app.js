@@ -70,22 +70,22 @@ btnBurger.addEventListener("click", ()=>{
 
 
 
-let btnModal = document.querySelectorAll(".modalActive");
+
 const modalWr = document.querySelector(".modal__wr");
 const modalContent = document.querySelector(".modal__body");
+const modalBtnClose = document.querySelector(".modal__body-btn");
+const arr = [modalWr, modalBtnClose];
+
+arr.forEach(item=>{
+	item.addEventListener("click", function(event){
+		modalWr.classList.remove("modal__wr-active");
+		modalContent.classList.remove("modal__body-open");
+	})
+})
 
 
-btnModal.forEach(item=>{
-	item.addEventListener("click", ()=>{
-		modalWr.classList.add("modal__wr-active");
-		modalContent.classList.add("modal__body-open");
-	});
-});
-
-
-modalWr.addEventListener("click", function(event){
-	modalWr.classList.remove("modal__wr-active");
-	modalContent.classList.remove("modal__body-open");
+modalContent.addEventListener("click", (e)=> {
+	e.stopPropagation();
 })
 
 
@@ -93,6 +93,7 @@ modalWr.addEventListener("click", function(event){
 
 
 
+///
 
 const swiper = new Swiper('.catalog__swiper-swiper', {
 	loop: true,
@@ -122,33 +123,61 @@ breakpoints:{
  let formTell = document.querySelector("#form__tell");
  let formBtn = document.querySelector("#form__btn");
 
+
  let regName = /^[0-9a-zA-Zа-яА-Яa-zA-ZЄ-ЯҐа-їґ]{3,}$/;
- let regTell = /^\+?[0-9]{3,}$/;
+ let regTell = /^\+?[0-9]{12,}$/;
 
  formBtn.addEventListener("click", ()=>{
 
 
 	if(regName.test(formName.value)){
-		console.log("++");
+		document.querySelector(".valid-name").classList.add("active-validation");
+		document.querySelector(".invalid-name").classList.remove("active-validation");
 	}else{
-		console.log("--");
+		document.querySelector(".valid-name").classList.remove("active-validation");
+		document.querySelector(".invalid-name").classList.add("active-validation");
 	}
 
 	if(regTell.test(formTell.value)){
-		console.log("++");
+		document.querySelector(".valid-tell").classList.add("active-validation");
+		document.querySelector(".invalid-tell").classList.remove("active-validation");
 	}else{
-		console.log("--");
+		document.querySelector(".valid-tell").classList.remove("active-validation");
+		document.querySelector(".invalid-tell").classList.add("active-validation");
 	}
 
-	if(regName.test(formName.value) && regTell.test(formTell.value)){
-		alert("data sent to the server")
+	if(regName.test(formName.value) && regTell.test(formTell.value)){ 
+		modalWr.classList.add("modal__wr-active");
+		modalContent.classList.add("modal__body-open");
 	}
-
-
-
-
- })
+ });
 
  
+ let formName2 = document.querySelector("#form__name2");
+ let formTell2 = document.querySelector("#form__tell2");
+ let formBtn2 = document.querySelector("#form__btn2");
 
- //console.log(regName.test(formName.value));
+
+ formBtn2.addEventListener("click", ()=>{
+
+	if(regName.test(formName2.value)){
+		document.querySelector(".valid-name2").classList.add("active-validation");
+		document.querySelector(".invalid-name2").classList.remove("active-validation");
+	}else{
+		document.querySelector(".valid-name2").classList.remove("active-validation");
+		document.querySelector(".invalid-name2").classList.add("active-validation");
+	}
+
+	if(regTell.test(formTell2.value)){
+		document.querySelector(".valid-tell2").classList.add("active-validation");
+		document.querySelector(".invalid-tell2").classList.remove("active-validation");
+	}else{
+		document.querySelector(".valid-tell2").classList.remove("active-validation");
+		document.querySelector(".invalid-tell2").classList.add("active-validation");
+	}
+
+	if(regName.test(formName2.value) && regTell.test(formTell2.value)){ 
+		modalWr.classList.add("modal__wr-active");
+		modalContent.classList.add("modal__body-open");
+	}
+ });
