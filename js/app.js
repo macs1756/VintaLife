@@ -28,11 +28,11 @@ const burger = document.querySelector(".burger__open");
 
 
 
-let n = false;
+let x = false;
 
 
 btnBurger.addEventListener("click", item =>{
-		n = !n;
+		x = !x;
 		if(n){
 			item.target.classList.add("btn-anim");
 			setTimeout(deleteClass, 1000);
@@ -191,8 +191,10 @@ function activeModal(){
  });
 
 
- let freeMeasurement = document.querySelector(".subfooter__text-btn-btn");
 
- freeMeasurement.addEventListener("click", ()=>{
-	activeModal();
- })
+
+
+
+
+
+ 

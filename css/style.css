@@ -1610,6 +1610,20 @@ input {
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
+    gap: calc(30px + 20 * ((100vw - 320px) / 1380));
+    padding-right: 0;
+  }
+
+  .footer__net-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .content-swiper {
