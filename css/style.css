@@ -599,6 +599,7 @@ h2 {
 }
 
 .header__burger {
+  cursor: pointer;
   z-index: 9000;
   position: relative;
   display: block;
