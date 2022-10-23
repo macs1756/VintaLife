@@ -33,7 +33,7 @@ let x = false;
 
 btnBurger.addEventListener("click", item =>{
 		x = !x;
-		if(n){
+		if(x){
 			item.target.classList.add("btn-anim");
 			setTimeout(deleteClass, 1000);
 			function deleteClass() {
