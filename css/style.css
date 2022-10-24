@@ -1775,9 +1775,12 @@ input {
     border: 1px solid transparent;
   }
   .footer__btn:hover{
-    transition: all 0.3s linear;
+    transition: all 0.4s linear;
     background-color: #2D2D2D;
     border: 1px solid transparent;
+  }
+  .footer__btn{
+    transition: all 0.4s linear;
   }
 
   .form__net-btn:hover {
